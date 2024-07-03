@@ -1,0 +1,29 @@
+ const spec1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A simple bar chart showing the count of subscription types.",
+            "data": {
+                "url": "https://raw.githubusercontent.com/tdoro02/tdoro02.github.io/main/disney.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Subscription Type",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Subscription Type"
+                    }
+                },
+                "y": {
+                    "aggregate": "count",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "Count"
+                    }
+                }
+            }
+        };
+
+        vegaEmbed('#vis', spec1);

@@ -5,7 +5,7 @@
 <head>    
     
     <link rel="stylesheet" type="text/css" href="s2_example1.css">
-    <title>Disney Plus Userbase</title> 
+    <title> Disney+ Userbase</title> 
 <!-- Import Vega & Vega-Lite -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -15,7 +15,7 @@
 <body> 
     <h1 class="big" style="margin-bottom: 0px;"> 
        
-        Disney Plus Userbase
+        Disney+ Userbase
     </h1>
     <p style="margin-top: 0px; color: darkblue">
         
@@ -47,7 +47,7 @@
             <h2>A Disney+ országonkénti felosztása</h2>
             <p> 
                 Ez a diagram a Disney+ előfizetők megoszlását mutatja be az országok függvényében, hogy hol híresebb ez a platform. 
-                diagram alapján meglehet nézni azt, hogy a Canadá-ban gyakoribb a felhasználok száma. 
+                diagram alapján meglehet nézni azt, hogy a Kanadában gyakoribb a felhasználok száma, ergó ott híresebb az adatok alapján a platform.
                 
             </p>
         </div>
@@ -61,9 +61,9 @@
     
     <section>
         <div class="chart-description"> 
-            <h2>A nemek és év szerinti elosztás</h2>
+            <h2> A nemek év szerinti elosztása</h2>
             <p> 
-                Az alábbi hőtérkép megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot.
+                Az alábbi hőtérkép megmutatja, hogy milyen arányban használják a nemek kor szerint a Disney+ platformot.
             </p>
         </div>
 
@@ -197,21 +197,21 @@ const spec3 = {
                     "field": "Age",
                     "type": "ordinal",
                     "axis": {
-                        "title": "Age"
+                        "title": "Év"
                     }
                 },
                 "y": {
                     "field": "Gender",
                     "type": "nominal",
                     "axis": {
-                        "title": "Gender"
+                        "title": "Nem"
                     }
                 },
                 "color": {
                     "aggregate": "count",
                     "type": "quantitative",
                     "legend": {
-                        "title": "Count"
+                        "title": "Darabszám"
                     }
                 }
             }

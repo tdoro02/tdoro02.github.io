@@ -1,1 +1,107 @@
-PROJEKT
+
+<!DOCTYPE html>
+<html> 
+
+<head>    
+    
+    <link rel="stylesheet" type="text/css" href="s2_example1.css">
+    <title>Disney Plus Userbase</title> 
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body> 
+    <h1 class="big" style="margin-bottom: 0px;"> 
+       
+        Disney Plus Userbase
+    </h1>
+    <p style="margin-top: 0px; color: darkblue">
+        <!-- we're setting the margin to 0px so the header and authour name are close together -->
+        Trombitas Dorottya | <a href="https://www.linkedin.com/in/trombitas-dorottya-22a66b25b//">LinkedIn</a> | <a
+            href="https://github.com/tdoro02">GitHub</a>
+    </p>
+    <h3 class="small"> 
+        Ez az oldal a DisneyPlus felhasználói adatbázisát mutatja meg és teszi lehetővé mindezt vizualizációk és elemzések segítségével.
+        A következőkben meglehet tekinteni a a platform demográfiai adatait, a fogyasztási szokásokat illetve a trendeket, megmutatva a demográfiai adatokat (nem, kor, lakhely, eszközök, előfizetés, és az alkalmazáson töltött időt.) 
+    </h3>
+
+    <section>
+        <div class="chart-description">
+            <h2>A Disney+ előfizetők típusa</h2>
+            <p>  
+                A lentebb látható diagram a Disney+ előfizetők megoszlását mutatja be annak függvényében, hogy milyen előfizetést használnak (havi szinten fizetnek, vagy éves kedvezményes előfizetést igényelnek ). 
+                 diagram alapján meglehet nézni azt, hogy a közkedveltebb előfizetés az a havi opció, nem pedig a kedvezményezett egy éves előfizetés. 
+                 Ez lehet azért is van így, mert a felhasználók nem szeretnének egyszerre egy nagyobb összeget kiadni a akasszából.
+            </p>
+        </div>
+        <figure id="Location1"></figure> 
+    </section>
+
+    <section>
+        <div class="chart-description"> 
+            <h2>A Disney+ országonkénti felosztása</h2>
+            <p> 
+                Ez a diagram a Disney+ előfizetők megoszlását mutatja be az országok függvényében, hogy hol híresebb ez a platform. 
+                diagram alapján meglehet nézni azt, hogy a ... -ban gyakoribb a felhasználok száma. 
+                
+            </p>
+        </div>
+        <figure id="Location2"></figure> 
+    </section>
+
+    
+    <section>
+        <div class="chart-description"> 
+            <h2>A nemek szerinti elosztás</h2>
+            <p> 
+                Az alábbi hőtérkép megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot.
+            </p>
+        </div>
+        <figure id="Location3"></figure> 
+    </section>
+
+    <section>
+        <div class="chart-description"> 
+            <h2>A nemek szerinti elosztása orszégonként</h2>
+            <p> 
+                Az alábbi diagram megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot országonként.
+            </p>
+        </div>
+        <figure id="Location3"></figure> 
+    </section>
+
+    <section>
+        <div class="chart-description"> 
+            <h2>A felhasználok kor szerint</h2>
+            <p> 
+                Az alábbi diagram megmutatja, hogy milyen korúak a felhasználok. Mondjuk nem lesz annyira releváns ez az adat hiszi a 12 éves gyereknek is, az anyuka regisztrál be.
+            </p>
+        </div>
+        <figure id="Location3"></figure> 
+    </section>
+
+    <script>
+        
+
+        var figure_1_spec = "s2_chart1.json"; // We're storing the URL of the graph we want to display in a variable
+        var figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json";
+        var figure_3_spec = "harmas.json";
+        var figure_4_spec = "harmas.json";
+        var figure_5_spec = "harmas.json";
+        
+
+
+
+        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#Location2', figure_2_spec)
+        vegaEmbed('#Location3', figure_3_spec)
+        vegaEmbed('#Location3', figure_4_spec)
+        vegaEmbed('#Location3', figure_5_spec)
+
+        
+
+    </script>
+
+</body>
+    
+</html>

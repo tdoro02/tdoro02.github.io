@@ -63,7 +63,8 @@
         <div class="chart-description"> 
             <h2> A nemek év szerinti elosztása</h2>
             <p> 
-                Az alábbi hőtérkép megmutatja, hogy milyen arányban használják a nemek kor szerint a Disney+ platformot.
+                Az alábbi hőtérkép megmutatja, hogy milyen arányban használják a nemek kor szerint a Disney+ platformot. 
+                A diagram alapján azt lehet következtetni, hogy a fiatalok körében inkább a férfiak és az idősek körében inkább a nők fizettek elő.
             </p>
         </div>
 
@@ -75,9 +76,10 @@
     <section>
         <div class="chart-description"> 
             
-            <h2> A nemek szerinti elosztása orszégonként </h2>
+            <h2> Országonkénti nemek elosztása </h2>
             <p> 
-                Az alábbi diagram megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot országonként.
+                Az alábbi hődiagram megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot a különböző országokban.
+                Azt lehet megfigyelni, hogy az Egyesült államokban és Spanyolországban fizettek elő nagyobb számban a nők, viszont az Egyesült Államokban a férfiak is jelen vannak.
             </p>
         </div>
 
@@ -234,21 +236,21 @@ vegaEmbed('#vis3', spec3);
                     "field": "Country",
                     "type": "nominal",
                     "axis": {
-                        "title": "Country"
+                        "title": "Ország"
                     }
                 },
                 "y": {
                     "field": "Gender",
                     "type": "nominal",
                     "axis": {
-                        "title": "Gender"
+                        "title": "Nem"
                     }
                 },
                 "color": {
                     "aggregate": "count",
                     "type": "quantitative",
                     "legend": {
-                        "title": "Count"
+                        "title": "Darabszám"
                     }
                 }
             }

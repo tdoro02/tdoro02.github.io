@@ -67,7 +67,11 @@
                 Az alábbi hőtérkép megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot.
             </p>
         </div>
-        <figure id="Location3"></figure> 
+        <h1>Age and Gender Heatmap</h1>
+
+         <!-- viz3 -->
+    <div id="vis3"></div> 
+        
     </section>
 
     <section>
@@ -78,7 +82,11 @@
                 Az alábbi diagram megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot országonként.
             </p>
         </div>
-        <figure id="Location3"></figure> 
+
+         <!-- viz4 -->
+        <h1>Gender and Country Heatmap</h1>
+    
+    <div id="vis4"></div>
     </section>
 
 
@@ -145,7 +153,80 @@
         };
 
 vegaEmbed('#vis2', spec2);
-        
+       
+const spec3 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A heatmap showing the distribution of age and gender.",
+            "data": {
+                "url": "https://raw.githubusercontent.com/tdoro02/tdoro02.github.io/main/disney.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "rect",
+            "encoding": {
+                "x": {
+                    "field": "Age",
+                    "type": "ordinal",
+                    "axis": {
+                        "title": "Age"
+                    }
+                },
+                "y": {
+                    "field": "Gender",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Gender"
+                    }
+                },
+                "color": {
+                    "aggregate": "count",
+                    "type": "quantitative",
+                    "legend": {
+                        "title": "Count"
+                    }
+                }
+            }
+        };
+
+vegaEmbed('#vis3', spec3);
+
+        const spec4 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A heatmap showing the distribution of gender and country.",
+            "data": {
+                "url": "https://raw.githubusercontent.com/tdoro02/tdoro02.github.io/main/disney.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "rect",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Country"
+                    }
+                },
+                "y": {
+                    "field": "Gender",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Gender"
+                    }
+                },
+                "color": {
+                    "aggregate": "count",
+                    "type": "quantitative",
+                    "legend": {
+                        "title": "Count"
+                    }
+                }
+            }
+        };
+
+vegaEmbed('#vis4', spec4);
 
     </script>
 

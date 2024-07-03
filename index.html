@@ -92,9 +92,10 @@
     <section>
         <div class="chart-description"> 
             
-            <h2> Egy adott napon hányan joinoltak </h2>
+            <h2> Az előfizetések napjainak diagramja </h2>
             <p> 
-                Az alábbi diagram megmutatja, hogy milyen nap, hanyan joinoltak.
+                Az alábbi diagram megmutatja, az adatok alapján egy adott napon a hónapból hányan fizettek elő. 
+                Meglehet figyelni azt hogy az Októberi hónap a csúcspont, de mindez Áprilistól növekedik folyamatosan.
             </p>
         </div>
         
@@ -274,14 +275,14 @@ vegaEmbed('#vis4', spec4);
                     "field": "Join Date",
                     "type": "temporal",
                     "axis": {
-                        "title": "Join Date"
+                        "title": "Előfizetés napja"
                     }
                 },
                 "y": {
                     "aggregate": "count",
                     "type": "quantitative",
                     "axis": {
-                        "title": "Count"
+                        "title": "Hány felhasználó fizetett elő"
                     }
                 }
             }

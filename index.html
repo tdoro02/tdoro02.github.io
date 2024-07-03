@@ -37,11 +37,8 @@
             </p>
         </div>
         <figure id="Location1"></figure> 
-
         
-        <h1>Subscription Type Count szia hello </h1>
-
-        
+<!-- viz1 -->
         <div id="vis1"></div>
         
     </section>
@@ -55,13 +52,17 @@
                 
             </p>
         </div>
-        <figure id="Location2"></figure> 
+        <h1>Country Distribution</h1>
+        
+    <!-- viz2 -->
+    <div id="vis2"></div>
+        
     </section>
 
     
     <section>
         <div class="chart-description"> 
-            <h2>A nemek szerinti elosztás</h2>
+            <h2>A nemek és év szerinti elosztás</h2>
             <p> 
                 Az alábbi hőtérkép megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot.
             </p>
@@ -71,19 +72,10 @@
 
     <section>
         <div class="chart-description"> 
-            <h2>A nemek szerinti elosztása orszégonként</h2>
+            
+            <h2> A nemek szerinti elosztása orszégonként </h2>
             <p> 
                 Az alábbi diagram megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot országonként.
-            </p>
-        </div>
-        <figure id="Location3"></figure> 
-    </section>
-
-    <section>
-        <div class="chart-description"> 
-            <h2>A felhasználok kor szerint</h2>
-            <p> 
-                Az alábbi diagram megmutatja, hogy milyen korúak a felhasználok. Mondjuk nem lesz annyira releváns ez az adat hiszi a 12 éves gyereknek is, az anyuka regisztrál be.
             </p>
         </div>
         <figure id="Location3"></figure> 
@@ -122,6 +114,37 @@
         };
 
         vegaEmbed('#vis1', spec1);
+
+        const spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A simple pie chart showing the distribution of users by country.",
+            "data": {
+                "url": "https://raw.githubusercontent.com/tdoro02/tdoro02.github.io/main/disney.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": {
+                "type": "arc",
+                "tooltip": true
+            },
+            "encoding": {
+                "theta": {
+                    "aggregate": "count",
+                    "field": "Country",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "legend": {
+                        "title": "Country"
+                    }
+                }
+            }
+        };
+
+vegaEmbed('#vis2', spec2);
         
 
     </script>

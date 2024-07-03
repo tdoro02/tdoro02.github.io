@@ -36,8 +36,7 @@
                  Ez lehet azért is van így, mert a felhasználók nem szeretnének egyszerre egy nagyobb összeget kiadni a akasszából.
             </p>
         </div>
-        <figure id="Location1"></figure> 
-        
+    
 <!-- viz1 -->
         <div id="vis1"></div>
         
@@ -52,7 +51,7 @@
                 
             </p>
         </div>
-        <h1>Country Distribution</h1>
+
         
     <!-- viz2 -->
     <div id="vis2"></div>
@@ -67,7 +66,6 @@
                 Az alábbi hőtérkép megmutatja, hogy milyen arányban használják a nemek a Disney+ platformot.
             </p>
         </div>
-        <h1>Age and Gender Heatmap</h1>
 
          <!-- viz3 -->
     <div id="vis3"></div> 
@@ -84,12 +82,42 @@
         </div>
 
          <!-- viz4 -->
-        <h1>Gender and Country Heatmap</h1>
     
     <div id="vis4"></div>
     </section>
 
+    
+    <section>
+        <div class="chart-description"> 
+            
+            <h2> Egy adott napon hányan joinoltak </h2>
+            <p> 
+                Az alábbi diagram megmutatja, hogy milyen nap, hanyan joinoltak.
+            </p>
+        </div>
+        
+<!-- viz5 -->
+    <div id="vis5"></div>
+        
+    </section>
 
+    
+<section>
+        <div class="chart-description"> 
+            
+            <h2> Egy adott napon hányan joinoltak </h2>
+            <p> 
+                Az alábbi diagram megmutatja, hogy 
+            </p>
+
+            
+        </div>
+        
+<!-- viz5 -->
+    <div id="vis6"></div>
+        
+    </section>
+    
     
     <script>
 
@@ -228,6 +256,84 @@ vegaEmbed('#vis3', spec3);
 
 vegaEmbed('#vis4', spec4);
 
+
+        const spec5 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A line plot showing the count of users by join date.",
+            "data": {
+                "url": "https://raw.githubusercontent.com/tdoro02/tdoro02.github.io/main/disney.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Join Date",
+                    "type": "temporal",
+                    "axis": {
+                        "title": "Join Date"
+                    }
+                },
+                "y": {
+                    "aggregate": "count",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "Count"
+                    }
+                }
+            }
+        };
+
+vegaEmbed('#vis5', spec5);
+        
+const spec6 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "description": "A stacked bar chart showing the distribution of genders and age groups.",
+            "data": {
+                "url": "https://raw.githubusercontent.com/tdoro02/tdoro02.github.io/main/disney.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "datum.Age < 40 ? 'Under 40' : '40 and above'",
+                    "as": "Age Group"
+                }
+            ],
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Gender",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Gender"
+                    }
+                },
+                "y": {
+                    "aggregate": "count",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "Count"
+                    }
+                },
+                "color": {
+                    "field": "Age Group",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["Under 40", "40 and above"],
+                        "range": ["#1f77b4", "#ff7f0e"]
+                    },
+                    "legend": {
+                        "title": "Age Group"
+                    }
+                }
+            }
+        };
+
+vegaEmbed('#viz6', spec6);
+        
     </script>
 
 </body>
